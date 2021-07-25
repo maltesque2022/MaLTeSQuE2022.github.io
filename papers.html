@@ -62,28 +62,20 @@
 
             </p>
 
-<!--            <p><strong>Abstract:</strong> Code smells are poor implementation choices applied during software evolution-->
-<!--                that can affect source code maintainability. While several heuristic-based approaches have been proposed-->
-<!--                in the past, machine learning solutions have recently gained attention since they may potentially address-->
-<!--                some limitations of state-of-the-art approaches. Unfortunately, however, machine learning-based code smell-->
-<!--                detectors still suffer from low accuracy. In this paper, we aim at advancing the knowledge in the field-->
-<!--                by investigating the role of static analysis warnings as features of machine learning models for the-->
-<!--                detection of three code smell types. We first verify the potential contribution given by these features.-->
-<!--                Then, we build code smell prediction models exploiting the most relevant features coming from the first-->
-<!--                analysis. The main finding of the study reports that the warnings given by the considered tools lead the-->
-<!--                performance of code smell prediction models to drastically increase with respect to what reported by previous-->
-<!--                research in the field.</p>-->
+            <p><strong>Abstract:</strong> Code smells represent a well-known problem in software engineering,
+since they are known cause of loss of comprehensibility and maintainability. The most recent efforts in devising automatic machine learning-based
+code smell detection techniques have achieved unsatisfying results so far. This could be explained by the fact that all these approaches follow a
+within-project classification, i.e., training and test data are taken from the same source project, which combined with the unbalanced nature of the problem,
+produces datasets with a very low number of instances belonging to the minority class (i.e., smelly instances). In this paper, we propose a cross-project
+machine learning approach and comparing its performance with a within-project alternative.
+The core idea is to use transfer learning to increase the overall number of smelly instances in the training datasets.
+Our results have shown that cross-project classification provides very similar performance with respect to within-project.
+Despite this finding does not yet provide a step forward in increasing the performance of ML techniques for code smell detection, it sets the basis for further investigations.</p>
 
             <hr>
 
             <p style="text-align: center;"><h4><strong>Unsupervised Learning of General-Purpose Embeddings for Code Changes</strong></h4></p>
             <p style="text-align: center;">
-<!--                <strong>Mikhail Pravilov</strong> <a style="color:blue" href="mailto:mepravilov@edu.hse.ru">mepravilov@edu.hse.ru</a> <i>(Higher School of Economics)</i>,-->
-<!--                <strong>Egor Bogomolov</strong> <a style="color:blue" href="mailto:egor.bogomolov@jetbrains.com">egor.bogomolov@jetbrains.com</a> <i>(JetBrains Research, Higher School of-->
-<!--   Economics)</i>,-->
-<!--                <strong>Yaroslav Golubev</strong> <a style="color:blue" href="mailto:yaroslav.golubev@jetbrains.com">yaroslav.golubev@jetbrains.com</a> <i>(JetBrains Research)</i>,-->
-<!--                <strong>Timofey Bryksin</strong> <a style="color:blue" href="timofey.bryksin@jetbrains.com">timofey.bryksin@jetbrains.com</a> <i>(JetBrains Research, Higher School of-->
-<!--   Economics)</i>-->
 
                 <strong>Mikhail Pravilov</strong> <i>(Higher School of Economics)</i>,
                 <strong>Egor Bogomolov</strong> <i>(JetBrains Research, Higher School of
@@ -94,15 +86,35 @@
 
             </p>
 
+            <p><strong>Abstract:</strong> A lot of problems in the field of software engineering — bug fixing,
+                commit message generation, etc. — require analyzing not only the
+                code itself but specifically code changes. Applying machine learning
+                models to these tasks requires us to create numerical representations of the changes,
+                i.e. embeddings. Recent studies demonstrate
+                that the best way to obtain these embeddings is to pre-train a deep
+                neural network in an unsupervised manner on a large volume of
+                unlabeled data and then further fine-tune it for a specific task.
+                In this work, we propose an approach for obtaining such embeddings of code changes during pre-training
+                and evaluate them on two different downstream tasks — applying changes to code and
+                commit message generation. The pre-training consists of the model
+                learning to apply the given change (an edit sequence) to the code in
+                a correct way, and therefore requires only the code change itself. To
+                increase the quality of the obtained embeddings, we only consider
+                the changed tokens in the edit sequence. In the task of applying
+                code changes, our model outperforms the model that uses full edit
+                sequences by 5.9 percentage points in accuracy. As for the commit
+                message generation, our model demonstrated the same results as
+                supervised models trained for this specific task, which indicates
+                that it can encode code changes well and can be improved in the
+                future by pre-training on a larger dataset of easily gathered code changes.
+
+            </p>
+
             <hr>
 
             <p style="text-align: center;"><h4><strong>VaryMinions: Leveraging RNNs to Identify Variants in Event Logs</strong></h4></p>
             <p style="text-align: center;">
-<!--                <strong>Sophie Fortz</strong> <a style="color:blue" href="mailto:sophie.fortz@unamur.be">sophie.fortz@unamur.be</a> <i>(Université de Namur)</i>,-->
-<!--                <strong>Paul Temple</strong> <a style="color:blue" href="mailto:paul.temple@unamur.be">paul.temple@unamur.be</a> <i>(Université de Namur),</i>-->
-<!--                <br><strong>Xavier Devroey</strong> <a style="color:blue" href="mailto:x.d.m.devroey@tudelft.nl">x.d.m.devroey@tudelft.nl</a> <i>(Delft University of Technology)</i>,-->
-<!--                <strong>Patrick Heymans</strong> <a style="color:blue" href="mailto:patrick.heymans@unamur.be">patrick.heymans@unamur.be</a> <i>(Université de Namur),</i><br>-->
-<!--                <strong>Gilles Perrouin</strong> <a style="color:blue" href="mailto:gilles.perrouin@unamur.be">gilles.perrouin@unamur.be</a> <i>(Université de Namur)</i>-->
+
                 <strong>Sophie Fortz</strong> <i>(Université de Namur)</i>,
                 <strong>Paul Temple</strong> <i>(Université de Namur),</i>
                 <strong>Xavier Devroey</strong> <i>(Delft University of Technology)</i>,<br>
@@ -112,18 +124,53 @@
 
             </p>
 
+            <p><strong>Abstract:</strong> Business processes have to manage variability in their execution,
+                e.g., to deliver the correct building permit in different municipalities.
+                This variability is visible in event logs, where sequence of events are
+                shared by the core process (building permit authorisation) but may
+                also be specific to each municipality. To rationalise resources (e.g.,
+                derive a configurable business process capturing all municipalities’
+                permit variants) or to debug anomalous behaviours, it is mandatory
+                to identify to which variant a given trace belongs to. This paper
+                supports this task by training Long Short Term Memory (LSTMs)
+                and Gated Recurrent Units (GRUs) algorithms on two datasets:
+                a configurable municipality and a travel expenses workflow. We
+                demonstrate that variability can be identified accurately (> 87%)
+                and discuss challenges of learning highly entangled variants.
+
+            </p>
+
             <hr>
 
             <p style="text-align: center;"><h4><strong>Toward Static Test Flakiness Prediction: A Feasibility Study</strong></h4></p>
             <p style="text-align: center;">
-<!--                <strong>Valeria Pontillo</strong> <a style="color:blue" href="mailto:vpontillo@unisa.it">vpontillo@unisa.it</a> <i>(University of Salerno)</i>,-->
-<!--                <strong>Fabio Palomba</strong> <a style="color:blue" href="mailto:fpalomba@unisa.it">fpalomba@unisa.it</a> <i>(University of Salerno)</i>,-->
-<!--                <br><strong>Filomena Ferrucci</strong> <a style="color:blue" href="mailto:fferrucci@unisa.it">fferrucci@unisa.it</a> <i>(University of Salerno)</i>-->
 
                 <strong>Valeria Pontillo</strong>  <i>(University of Salerno)</i>,
                 <strong>Fabio Palomba</strong> <i>(University of Salerno)</i>,
                 <strong>Filomena Ferrucci</strong> <i>(University of Salerno)</i>
 
+
+            </p>
+
+            <p><strong>Abstract:</strong> Flaky tests are tests that exhibit both a passing and failing behavior
+                    when run against the same code. While the research community
+                    has attempted to define automated approaches for detecting and
+                    addressing test flakiness, most of them suffer from scalability issues
+                    and uncertainty as they require test cases to be run multiple times.
+                    This limitation has been recently targeted by means of machine learning solutions that could predict the flakiness of tests
+                    using a set of both static and dynamic metrics that would avoid
+                    the re-execution of tests. Recognizing the effort spent so far, this
+                    paper poses the first steps toward an orthogonal view of the problem, namely the classification of flaky tests using only statically
+                    computable software metrics. We propose a feasibility study on 72
+                    projects of the iDFlakies dataset, and investigate the differences
+                    between flaky and non-flaky tests in terms of 25 test and production
+                    code metrics and smells. First, we statistically assess those differences.
+                    Second, we build a logistic regression model to verify the
+                    extent to which the differences observed are still significant when
+                    the metrics are considered together. The results show a relation
+                    between test flakiness and a number of test and production code
+                    factors, indicating the possibility to build classification approaches
+                    that exploit those factors to predict test flakiness.
 
             </p>
 
@@ -136,6 +183,18 @@
 
                 <strong>Ignacio Nuñez Norambuena</strong> <i>(University of Chile)</i>,
                 <strong>Alexandre Bergel</strong> <i>(University of Chile)</i>
+
+            </p>
+
+            <p><strong>Abstract:</strong> It is common for software practitioners to look for experts on on-line chat platforms, such as Discord.
+                However, finding them is a complex activity that requires a deep knowledge of the open source community.
+                As a consequence, newcomers and casual participants
+                may not be able to adequately find experts willing to discuss a particular topic.
+                Our paper describes a bot that provides a ranked list of Discord
+                users that are experts in a particular set of topics. Our bot uses
+                simple heuristics to model expertise, such as a word occurrence
+                table and word embeddings. Our bot shows that at least half of the
+                retrieved users are indeed experts.
 
             </p>
 
@@ -153,18 +212,62 @@
 
             </p>
 
+
+            <p><strong>Abstract:</strong> <em>Background</em>. Complex software systems produce a large amount of
+                data depicting their internal state and activities. The data can be
+                monitored to make estimations and predictions of the status of the
+                system, helping taking preventative actions in case of impending
+                malfunctions and failures. However, a complex system may reveal
+                thousands of internal metrics, which makes it a non-trivial task to
+                decide which metrics are the most important to monitor.
+                <em>Objective</em>. In this work we aim at finding a subset of metrics
+                to collect and analyse for the monitoring of the load in a Service-
+                oriented system.
+                <em>Method</em>. We use a performance test bench tool to generate load of
+different intensities on the target system, which is a specific service-
+oriented application platform. The numeric metrics data collected
+from the system is combined with the load intensity at each moment.
+The combined data is used to analyse which metrics are best at
+estimating the load of the system. By using a regression analysis
+it was possible to rank the metrics by their ability to measure the
+load of the system.
+                <em>Results</em>. The results show that (1) the use of machine learning
+regressor allows to correctly measure the load of a system-oriented
+system, and (2) the most important metrics are related to network
+traffic and request counts, as well as memory usage and disk activity.
+<em>Conclusion</em>. The results help with the designs of efficient monitoring tool. In addition, further investigation should be focused on
+exploring more precise machine learning model to further improve
+the metric selection process.
+            </p>
+
             <hr>
 
 
             <h3>Talk</h3>
 
-            <p style="text-align: center;"><h4><strong>Toward Static Test Flakiness Prediction: A Feasibility Study</strong></h4></p>
+            <p style="text-align: center;"><h4><strong>The Impact of Release-based Validation on Software Vulnerability Prediction Models</strong></h4></p>
             <p style="text-align: center;">
 <!--                <strong>Giulia Sellitto</strong> <a style="color:blue" href="mailto:g.sellitto21@studenti.unisa.it">g.sellitto21@studenti.unisa.it</a> <i>(University of Salerno)</i>,-->
 <!--                <strong>Filomena Ferrucci</strong> <a style="color:blue" href="mailto:fferrucci@unisa.it">fferrucci@unisa.it</a> <i>(University of Salerno)</i>-->
 
                 <strong>Giulia Sellitto</strong> <i>(University of Salerno)</i>,
                 <strong>Filomena Ferrucci</strong> <i>(University of Salerno)</i>
+
+            </p>
+
+            <p><strong>Abstract</strong>Software vulnerability prediction models represent a promising
+approach in security defect analysis, since they allow to focus testing and improve software quality. Several studies have proposed
+Machine Learning approaches which demonstrated satisfying performance when evaluated using K-fold Cross-validation. However,
+recent research demonstrated that, when applying a release-based
+validation strategy instead, the performance declined. We want
+to investigate this issue, by conducting a comparative study on
+different models and dataset. We analyze the impact of using a
+relase-based validation approach on vulnerability prediction models formerly evaluated using cross-validation. We rely on an existing
+dataset to evaluate two prediction models that exploit code metrics
+and textual features, respectively. We confirm that the release-based
+validation approach leads to generally lower performance, high-
+lighting that further research would be needed to make vulnerability
+prediction models more effective.
 
             </p>
 
@@ -177,6 +280,21 @@
 
                 <strong>Sami Hadouaj</strong> <i>(INSAT, Tunisia)</i>,
                 <strong>Fabio Palomba</strong> <i>(University of Salerno)</i>
+
+            </p>
+
+            <p><strong>Abstract</strong>Software engineering projects are typically developed by multiple
+developers that collaboratively work through the use of a version
+control system. The collaborative nature of software development
+has given rise to the use of automated mechanisms, called bots,
+that recommend source code quality-related improvements while
+a new pull request is open on the repository. These bots use a
+combination of multiple artificial intelligence approaches, including
+natural language processing and deep learning. In this presentation
+abstract, we aim at discussing the current inner-working of these
+bots as well as the existing limitations. The final goal of our research
+is to devise a list of improvements that should be made to make
+those bots more useful to developers.
 
             </p>
 
@@ -199,6 +317,23 @@
                 <strong>Filomena Ferrucci</strong> <i>(University of Salerno)</i>,
                 <strong>Raffaela Mirandola</strong> <i>(Politecnico di Milano)</i>,
                 <strong>Damian Andrew Tamburri</strong> <i>(Jheronimus Academy of Data Science)</i>
+
+            </p>
+
+            <p><strong>Abstract</strong>Software construction is nowadays regulated by means of task issuing and
+                allocations—think of issue-tracking systems and the task
+management therein—, however, task allocation is mostly left to
+human interpretation with little or no evidence-based recommendation as to which developer (or even online source) might better
+fit a specific task description. In this presentation abstract we show
+a software task allocation technique that is evidence-based, namely,
+it uses a metrics-based approach to figure out which developer, with
+which skills, better fits a specific task description. Moreover, we
+propose the application of machine learning techniques to improve
+the allocation strategy effectiveness over time. We aim to start a
+fruitful discussion on the application of such strategies to the task
+allocation activity, which is one of the key factors for the software
+projects’ success.
+
 
             </p>
 
